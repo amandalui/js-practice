@@ -1,0 +1,58 @@
+body {
+  border: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+/* Type */
+
+h1 {
+    font-weight: 700;
+}
+
+/* Colors */
+
+.bg--blue-gray {
+    background: #e2e6ed;
+}
+
+/* Spacers */
+.spacer--small {
+    padding: 1em;
+}
+
+/* Conversions */
+
+.conversion--weight {
+    text-align: center;
+    padding-top: 20vh;
+    font-size: 1em;
+}
+
+.conversion--weight input[type=text] {
+    width: 30%;
+    min-width: 200px;
+    font-size: 2em;
+    padding: 15px;
+    text-align: center;
+    font-weight: 700;
+    border: 0px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.conversion--weight submit {
+    width: 30%;
+    font-size: 1em;
+    padding: 10px 25px;
+    font-weight: 400;
+    background: #4b92f9;
+    border-radius: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.error {
+    padding-bottom: 20px;
+    color: red;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <title>JS</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="The home of mini javascript experiments" />
+  <meta name="keywords" content="javascript, graphic design, designer, amanda lui" />
+  <meta name="author" content="Amanda Lui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="cache-control" content="max-age=3600" />
+  <meta name="viewport" content="initial-scale=1">
+
+  <!--  Essential META Tags -->
+  <meta property="og:title" content="Amanda Lui">
+  <meta property="og:description" content="The home of mini javascript experiments">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="1028">
+  <meta property="og:image:height" content="641">
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <!--  Non-Essential, But Recommended -->
+  <meta property="og:site_name" content="Amanda Lui">
+  <meta name="twitter:image:alt" content="Amanda Lui | Portfolio">
+  <meta name="twitter:image:src" content="http://amandalui.com/web-preview.png">
+  <meta name="twitter:image:width" content="1028">
+  <meta name="twitter:image:height" content="641">
+    
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700|Poppins:400,700,500,600,300|Ramaraja' rel='stylesheet' type='text/css'>
+
+</head>
+    
+<body>
+  <div class="conversion--weight">
+    <form>
+        <h1>Enter Pounds:</h1>
+        <div id="error">&nbsp;</div>
+        <input type="text" id="userInput">
+        <div id="weightConversion"></div>
+        <div class="spacer--small"></div>
+        <submit onclick="doWeightConversion()">Convert to kg</submit>
+    </form>
+    
+
+    <script>
+        // convert from US to metric       
+        function doWeightConversion() {
+            
+            var usWeight = document.getElementById("userInput").value;
+            var metricWeight = usWeight * 0.45359237;
+            
+            if (usWeight === "") {
+                // clear previous conversion 
+                document.getElementById('weightConversion').innerHTML = "";
+                
+                // display error
+                document.getElementById('error').innerHTML = "<div class=\"error\">Please enter a number</div>";
+            } else {            
+                
+            // clear error
+            document.getElementById('error').innerHTML = "&nbsp;";
+                
+            // enter conversion
+            document.getElementById('weightConversion').innerHTML = 
+            "<h2>" + usWeight + "lbs = " + metricWeight + "kg</h2>";
+            }
+            
+//            if (metricWeight === 0) {
+//                document.getElementById('weightConversion').innerHTML = "Please enter a number";
+//            } else {
+//                document.getElementById('weightConversion').innerHTML = usWeight + 
+//                "lbs = " + metricWeight + "kg\n";
+//            };
+        };
+    </script>
+  </div>
+    
+</body>
+</html>
