@@ -28,11 +28,94 @@
   <meta name="twitter:image:height" content="641">
     
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link href='http://fonts.googleapis.com/css?family=Karla:400,700|Poppins:400,700,500,600,300|Ramaraja' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Poppins:400,700,500,600,300|Ramaraja' rel='stylesheet' type='text/css'>
 
 </head>
     
 <body>
+    
+  <div class="text-test">   
+    <h1>Test Typeface</h1>
+        
+      <div class="dropdown">
+          <button onclick="dropWeight()" class="dropbtn" id="dropbtn-weight">Regular 400 &#9660;</button>
+        <div id="dropWeight" class="dropdown-content">
+            <option value="400" onclick="changeWeight(this);">Regular 400</option>
+            <option value="700" onclick="changeWeight(this);">Bold 700</option>
+        </div>
+      </div>
+      <div class="slidecontainer">
+        <input type="range" min="8" max="80" step="8" value="24" class="slider" id="text-size">
+          <span><span id="text-size-display"></span>px</span>
+      </div>
+      <div class="clear"></div>
+      <div id="output-text" contentEditable=true>The quick brown fox jumps over the lazy dog</div>
+      
+      <script>
+          // Change font weight on selection 
+          function changeWeight(weight){
+              document.getElementById("output-text").style.fontWeight = weight.value;
+              
+              // Change button text to display current font weight selection
+              if (weight.value === "400") {
+                  document.getElementById("dropbtn-weight").textContent = "Regular 400 \u25BC";
+              } else if (weight.value === "700") {
+                  document.getElementById("dropbtn-weight").textContent = "Bold 700 \u25BC";
+              }
+          }
+          
+          // Change font size on selection 
+          var slider = document.getElementById("text-size");
+          var output = document.getElementById("text-size-display");
+          output.innerHTML = slider.value;
+              
+          slider.oninput = function() {
+              output.innerHTML = this.value;
+              document.getElementById("output-text").style.fontSize = this.value + "px";
+          }
+          
+//          // Change font size on selection 
+//          function changeSize(size){
+//              document.getElementById("output-text").style.fontSize = size.value;
+//              
+//              // Change button text to display current font weight selection
+//              if (size.value === "14px") {
+//                  document.getElementById("dropbtn-size").textContent = "14px";
+//              } else if (size.value === "24px") {
+//                  document.getElementById("dropbtn-size").textContent = "24px";
+//              } else if (size.value === "36px") {
+//                  document.getElementById("dropbtn-size").textContent = "36px";
+//              }
+//          }
+          
+          /* When the user clicks on the button, 
+          toggle between hiding and showing the dropdown content */
+          function dropWeight() {
+            document.getElementById("dropWeight").classList.toggle("show");
+          }
+          function dropSize() {
+            document.getElementById("dropSize").classList.toggle("show");
+          }
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+      </script>
+  </div>
+      <br>
+      <hr>
+      <br>
   <div class="conversion--weight">
     <form>
         <h1>Enter Pounds:</h1>
